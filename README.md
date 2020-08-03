@@ -1,25 +1,21 @@
-# README
+# <dog_blog>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+わんちゃん好きの人の為のblogです。
 
-Things you may want to cover:
+### サイトテーマ
+犬をより好きになり、犬との生活がより豊かになる
 
-* Ruby version
+### テーマを選んだ理由
+私自身犬を飼っていて、犬の可愛い一面や日常を投稿したり、困っていること、悩み事を犬好きの仲間と共有しあったりすることで飼い主として成長できたりそしてもっと犬のことを知り、より好きになり、犬との生活がより良いものになると思ったから。
 
-* System dependencies
+### ターゲットユーザ
+犬が好きな人、犬を飼っている人、犬を初めて飼った人、犬との生活で困っている人
 
-* Configuration
+### 主な利用シーン
+犬との生活で可愛い一面や困ったこと、共有したいことがあったとき
 
-* Database creation
+## 設計書
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# dog_blog
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1yNl-FHsRAX_zIPnRRt9nFPQi9LkgEZ7WxVLmok4mIfA/edit#gid=2135139699>
