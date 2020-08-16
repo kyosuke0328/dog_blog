@@ -1,0 +1,17 @@
+<h1 class="text-center">Blog詳細</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-6">
+			<p>
+				<%= attachment_image_tag @blog , :image, size: "300x200"  %>
+			</p>
+			<p>
+				<%= @blog.title %>
+			</p>
+			<p>
+				<%= @blog.body %>
+			</p>
+		</div>
+	</div>
+</div>

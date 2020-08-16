@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DogBlog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+      <title>DogBlog</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-top">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <%= link_to root_path do %>
+            <span class="header-title"><span>
+            </span>dog_blog</span>
+          <% end %>
+        </nav>
+        <nav>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    </div>
+    <footer>
+      <p>© All rights reserved by dog_blog</p>
+    </footer>
   </body>
 </html>

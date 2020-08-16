@@ -1,0 +1,22 @@
+<h1 class="text-center">Photo詳細</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-6">
+			<p>
+				<%= attachment_image_tag @photo , :image, size: "300x200"  %>
+			</p>
+			<p>
+				<%= @photo.title %>
+			</p>
+		</div>
+	</div>
+</div>
+<!-- # <% if @photo.member.id == current_member.id %>
+# 	<p>
+		<%= link_to "Edit", edit_photo_path(@photo),class:'btn-sm btn-success edit_photo_31537' %>
+	</p>
+#    <p>
+		<%= link_to "Destroy", photo_path(@photo),class:'btn-sm btn-danger destroy_photo_31537 ',method: :delete, "data-confirm" => "本当に削除しますか？" %>
+	</p>
+# <% end %> -->
