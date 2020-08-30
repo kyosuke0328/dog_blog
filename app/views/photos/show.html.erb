@@ -1,22 +1,26 @@
-<h1 class="text-center">Photo詳細</h1>
 <div class="container">
 	<div class="row">
-		<div class="col-lg-4"></div>
+		<h1 class="text-center photo-text">Photo詳細</h1>
+		<div class="col-lg-3"></div>
 		<div class="col-lg-6">
-			<p>
-				<%= attachment_image_tag @photo , :image, size: "300x200"  %>
-			</p>
-			<p>
-				<%= @photo.title %>
-			</p>
+			<table class="photo-box2">
+					<tr>
+						<th class="photo-image">
+							<%= link_to member_show_path(@member) do %>
+								<%= attachment_image_tag @photo.member, :profile_image, size: "50x50", fallback: "no_image.jpg" %>
+							<% end %>
+						</th>
+						<th><%= @photo.member.name %></th>
+					</tr>
+			</table>
+			<div>
+				<%= attachment_image_tag @photo , :image, size: "500x350"  %>
+				<p class="photo-dlete text-right dlt">
+					<% if @photo.member.id == current_member.id %>
+						<%= link_to "削除する", photo_path(@photo), class:'btn btn-danger btn btn--red btn--radius btn--cubic',  method: :delete , data: {confirm: "削除しますか？"} %>
+				  	<% end %>
+				</p>
+			</div>
 		</div>
-	</div>
+	 </div>
 </div>
-<!-- # <% if @photo.member.id == current_member.id %>
-# 	<p>
-		<%= link_to "Edit", edit_photo_path(@photo),class:'btn-sm btn-success edit_photo_31537' %>
-	</p>
-#    <p>
-		<%= link_to "Destroy", photo_path(@photo),class:'btn-sm btn-danger destroy_photo_31537 ',method: :delete, "data-confirm" => "本当に削除しますか？" %>
-	</p>
-# <% end %> -->

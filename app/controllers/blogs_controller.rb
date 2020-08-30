@@ -5,52 +5,67 @@ class BlogsController < ApplicationController
 
 	def create
 		@blog = Blog.new(blog_params)
-		# @blog.member_id = current_member.id
+		@blog.member_id = current_member.id
 		if
 			@blog.save
-         	flash[:notice] = "Blog was successfully created."
+         	flash[:notice] = "新規投稿が完了しました"
          	redirect_to blog_path(@blog.id)
         else
-            # @member = current_member
-         	@blogss = Blog.all
-         	render 'index'
+         	flash[:alert] = "入力内容に誤りがあります"
+         	render :new
         end
 	end
 
 	def index
-		@blogs = Blog.all
-        # @member = @blog.member
+		@blogs = Blog.page(params[:page]).per(5).order(created_at: :desc)
 	end
 
 	def show
 		@blog = Blog.find(params[:id])
         @post_comment = PostComment.new
-        # @member = @blog.member
-        # @post_comments = @blog.post_comments
+        @member = @blog.member
+        @post_comments = @blog.post_comments
 	end
+
 	def edit
-		@bog = Blog.find(params[:id])
-        if @blog.member.id != current_member.id
-           redirect_to blogs_path
-        end
+		@blog = Blog.find(params[:id])
+        # if @blog.member.id != current_member.id
+        #    redirect_to blogs_path
+        # end
 	end
+
 	def update
 		@blog = Blog.find(params[:id])
         if @blog.update(blog_params)
-        	flash[:notice] = "Blog was successfully created."
+        	flash[:notice] = "Blogを更新しました"
          	redirect_to blog_path(@blog)
         else
-         	render 'edit'
+        	flash[:alert] = "入力内容に誤りがあります"
+         	render :edit
         end
 	end
+
 	def destroy
 		blog = Blog.find(params[:id])
         blog.destroy
     	redirect_to blogs_path
 	end
+
+	def search
+		@blogs = Blog.page(params[:page]).per(5).order(created_at: :desc).joins(:member).select('blogs.*','members.name')
+	    if  params[:word].present?
+	        @blogs = @blogs.where('name LIKE ? or title LIKE ? or body LIKE ?', "%#{params[:word]}%", "%#{params[:word]}%", "%#{params[:word]}%")
+	   	end
+
+	    if params[:category].present?
+	    	@blogs = @blogs.where(category: params[:category])
+    	end
+    	render :index
+  	end
+
 	private
 	def blog_params
-      params.require(:blog).permit(:image, :title, :body )
+      params.require(:blog).permit(:image, :title, :body, :category, :member_id )
 
   	end
 end

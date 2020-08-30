@@ -1,0 +1,40 @@
+<% blogs.each do |blog| %>
+	<div class="blog-border">
+	<div class="blog-border2"></div>
+		<div class="row blogs">
+			<div class="col-lg-3">
+				<div class="blog-box">
+					<table class="blog-table1">
+						<tr>
+							<th class="image-blog-index">
+								<%= attachment_image_tag blog.member, :profile_image, size: "40x40", fallback: "no_image.jpg" %>
+							</th>
+							<td><%= blog.member.name %></td>
+						</tr>
+					</table>
+					<table class="blog-table2 pull-left">
+						<tr>
+							<th><h4><%= blog.title %></h4></th>
+						</tr>
+						<tr>
+							<td><p class="overflow"><%= blog.body %></p>
+							</td>
+						</tr>
+						<tr>
+							<th class="blogs-category">#<%= blog.category %></th>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="col-lg-4"></div>
+			<div class="col-lg-3">
+				<div class="blog-box2">
+					<%= link_to blog_path(blog) do %>
+						<%= attachment_image_tag blog, :image, size: "350x220" %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
+

@@ -1,4 +1,4 @@
-  # This file is auto-generated from the current state of the database. Instead
+# This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_112828) do
+ActiveRecord::Schema.define(version: 2020_08_24_075411) do
 
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,14 +19,14 @@ ActiveRecord::Schema.define(version: 2020_08_10_112828) do
     t.string "image_id"
     t.string "title"
     t.text "body"
+    t.integer "category"
   end
 
-  create_table "favolites", force: :cascade do |t|
+  create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "member_id"
     t.integer "blog_id"
-    t.integer "photo_id"
   end
 
   create_table "members", force: :cascade do |t|
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_112828) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.integer "profile_image_id"
+    t.string "profile_image_id"
     t.text "introduction"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_08_10_112828) do
     t.datetime "updated_at", null: false
     t.integer "member_id"
     t.string "image_id"
-    t.string "title"
   end
 
   create_table "post_comments", force: :cascade do |t|
@@ -57,16 +56,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_112828) do
     t.datetime "updated_at", null: false
     t.integer "member_id"
     t.integer "blog_id"
-    t.integer "photo_id"
     t.text "comment"
-  end
-
-  create_table "relationships", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "member_id"
-    t.integer "follower_id"
-    t.integer "followed_id"
   end
 
 end

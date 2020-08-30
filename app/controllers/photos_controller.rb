@@ -5,20 +5,24 @@ class PhotosController < ApplicationController
 
 	def create
 		@photo = Photo.new(photo_params)
+		@photo.member_id = current_member.id
+		if
 			@photo.save
-         	flash[:notice] = "Photo was successfully created."
-         	redirect_to photos_path
+         	flash[:notice] = "新規投稿が完了しました"
+         	redirect_to photo_path(@photo.id)
+        else
+         	flash[:alert] = "入力内容に誤りがあります"
+         	render :new
+        end
 	end
 
 	def index
-		@photos = Photo.all
+		@photos = Photo.page(params[:page]).per(15).order(created_at: :desc)
 	end
 
 	def show
 		@photo = Photo.find(params[:id])
-        @post_comment = PostComment.new
-        @member = @photo.membner
-        @post_comments = @photo.post_comments
+        @member = @photo.member
 	end
 
 	def edit
@@ -31,10 +35,11 @@ class PhotosController < ApplicationController
 	def update
 		@photo = Photo.find(params[:id])
         if @photo.update(photo_params)
-        	flash[:notice] = "Photo was successfully created."
+        	flash[:notice] = "Photoを更新しました"
          	redirect_to photo_path(@photo)
         else
-         	render 'edit'
+        	flash[:alert] = "入力内容に誤りがあります"
+         	render :edit
         end
 	end
 
@@ -46,7 +51,7 @@ class PhotosController < ApplicationController
 
 	private
 	def photo_params
-      params.require(:photo).permit(:image, :title, )
+      params.require(:photo).permit(:image, :member_id )
 
   	end
 

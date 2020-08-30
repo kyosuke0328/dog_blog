@@ -1,0 +1,17 @@
+ja:
+  enums:
+    blog:
+      category:
+        everyday: "日常"
+        food: "食事"
+        exercise: "運動"
+        sickness: "病気"
+        other: "その他"
+ja:
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      previous: "‹"
+      next: "›"
+      truncate: "..."

@@ -1,1 +1,37 @@
-top
+<div class="container">
+	<div class="row top">
+		<div class="theTarget">
+		    <div class="top-img ti" style="background-image: url(assets/shinamon2.jpg)"><h1 class="text-center top-img2">Welcome to dog_blog</h1></div>
+		    <div class="top-img" style="background-image: url(assets/dog3.jpg)"></div>
+		    <div class="top-img" style="background-image: url(assets/dog4.jpg)"></div>
+		    <div class="top-img" style="background-image: url(assets/dog2.jpg)"></div>
+		    <div class="top-img" style="background-image: url(assets/dog7.jpg)"></div>
+		    <div class="top-img" style="background-image: url(assets/dog8.jpg)"></div>
+		    <div class="top-img" style="background-image: url(assets/dog9.jpg)"></div>
+		 </div>
+	</div>
+	<div>
+		<h1 class="text-center" id="top-text">~Blog新着~</h1>
+		<table class="table-hover top-table">
+			<% @blogs.each do |blog| %>
+				<tbody id="top-b">
+					<tr>
+						<td id="top-member">
+							<%= link_to blog_path(blog) do %>
+								<%= attachment_image_tag blog.member, :profile_image, size: "60x60", fallback: "no_image.jpg" %>
+							<% end %>
+						</td>
+						<td id="m-title">
+							<h4 class="text-center">
+								<%= link_to blog_path(blog) do %>
+									<%= blog.title %>
+								<% end %>
+								</h4>
+							</td>
+						<td><%= blog.created_at.strftime('%Y/%m/%d') %></td>
+					</tr>
+				</tbody>
+			<% end %>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+	<% photos.each do |photo| %>
+		<div class="photos-box">
+			<table class="photo-table">
+				<tr>
+					<th class="image-photo-index">
+						<%= attachment_image_tag photo.member, :profile_image, size: "30x30", fallback: "no_image.jpg" %>
+					</th>
+				</tr>
+			</table>
+			<p>
+				<%= link_to photo_path(photo) do %>
+				<%= attachment_image_tag photo, :image, size: "190x150" %>
+			<% end %>
+			</p>
+		</div>
+	<% end %>
+</div>

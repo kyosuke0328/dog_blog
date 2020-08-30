@@ -1,0 +1,47 @@
+<div id="myshow">
+    <h1 class="text-center myshow">マイページ</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <p class="image-member-show">
+                    <%= attachment_image_tag @member, :profile_image, fallback: "no_image.jpg", size: "300x300"  %>
+                </p>
+            </div>
+            <div class="col-lg-7">
+                <table class="table">
+                    <tr>
+                        <th>ニックネーム</th>
+                        <td><%= @member.name %></td>
+                    </tr>
+                    <tr>
+                        <th>ひとこと</th>
+                        <td>
+                            <%= @member.introduction %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Blogs</th>
+                        <td>投稿
+                            <%= link_to member_blog_path(@member.id) do %>
+                            <%= @blogs.count %>
+                            <% end %>件
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Photos</th>
+                        <td>投稿
+                            <%= link_to member_photo_path(@member.id) do %>
+                            <%= @photos.count %>
+                            <% end %>件
+                        </td>
+                    </tr>
+                </table>
+                <% if @member.id == current_member.id %>
+                    <p class="pull-right">
+                        <%= link_to "編集", member_edit_path(id: current_member.id), class: 'btn btn-primary btn btn--primary btn--radius btn--cubic' %>
+                    </p>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</body>

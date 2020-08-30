@@ -4,26 +4,80 @@
       <title>DogBlog</title>
       <%= csrf_meta_tags %>
       <%= csp_meta_tag %>
-
+      <script src="https://kit.fontawesome.com/ee8e77f5d3.js" crossorigin="anonymous"></script>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <header class="navbar navbar-top">
+    <header class="navbar navbar-fixed-top">
       <div class="container">
-        <nav class="nav navbar-nav navbar-left">
-          <%= link_to root_path do %>
-            <span class="header-title"><span>
-            </span>dog_blog</span>
-          <% end %>
-        </nav>
         <nav>
+          <nav class="nav navbar-nav navbar-left">
+              <%= link_to root_path do %>
+                  <span class="header-title">Dog<span class="color"><i class="fas fa-paw"></i></span>Blog</span>
+              <% end %>
+          </nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if member_signed_in? %>
+              <li class="header-text">
+                <%= link_to "マイページ",member_show_path(current_member.id), class: 'header-text' %>
+              </li>
+              <li>
+                <%= link_to "About",homes_about_path, class: 'header-text' %>
+              </li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle header-text" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  投稿一覧<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><%= link_to "Blogs",blogs_path, class: 'header-text' %></li>
+                  <li role="presentation"><%= link_to "Photos",photos_path, class: 'header-text' %></li>
+                </ul>
+              </li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle header-text" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  新規投稿<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><%= link_to "Blog投稿",new_blog_path, class: 'header-text' %></li>
+                  <li role="presentation"><%= link_to "Photo投稿",new_photo_path, class: 'header-text' %></li>
+                </ul>
+              </li>
+              <li>
+                <%= link_to "Log out",destroy_member_session_path, class: 'header-text', method: :delete %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Home",root_path, class: 'header-text' %>
+              </li>
+              <li>
+                <%= link_to "About",homes_about_path, class: 'header-text' %>
+              </li>
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle header-text" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                  投稿一覧<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li role="presentation"><%= link_to "Blogs",blogs_path, class: 'header-text' %></li>
+                  <li role="presentation"><%= link_to "Photos",photos_path, class: 'header-text' %></li>
+                </ul>
+              </li>
+              <li>
+                <%= link_to "新規登録",new_member_registration_path, class: 'header-text' %>
+              </li>
+              <li>
+                <%= link_to "ログイン",new_member_session_path, class: 'header-text' %>
+              </li>
+            <% end %>
+          </ul>
         </nav>
       </div>
     </header>
     <div class="container">
-      <p id="notice"><%= notice %></p>
+      <div class="row">
+        <p class="notice notice-success" ><%= notice %></p>
+        <p class="alert alert-danger" ><%= alert %></p>
+      </div>
       <%= yield %>
     </div>
     <footer>
