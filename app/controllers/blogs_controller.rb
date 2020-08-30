@@ -6,8 +6,7 @@ class BlogsController < ApplicationController
 	def create
 		@blog = Blog.new(blog_params)
 		@blog.member_id = current_member.id
-		if
-			@blog.save
+		if	@blog.save
          	flash[:notice] = "新規投稿が完了しました"
          	redirect_to blog_path(@blog.id)
         else
@@ -29,9 +28,6 @@ class BlogsController < ApplicationController
 
 	def edit
 		@blog = Blog.find(params[:id])
-        # if @blog.member.id != current_member.id
-        #    redirect_to blogs_path
-        # end
 	end
 
 	def update
