@@ -75,7 +75,9 @@
     </header>
     <div class="container">
       <div class="row">
-        <p class="notice notice-success" ><%= notice %></p>
+        <% if notice %>
+          2
+        <% end %>
         <p class="alert alert-danger" ><%= alert %></p>
       </div>
       <%= yield %>

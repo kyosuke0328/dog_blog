@@ -45,14 +45,19 @@ class PhotosController < ApplicationController
 
 	def destroy
 		photo = Photo.find(params[:id])
-        photo.destroy
+    if photo.destroy
+    	flash[:notice] = "Photoを削除しました"
     	redirect_to photos_path
+    else
+    	flash[:alert] = "Photoを削除できませんでした"
+    	rende :show
+    end
 	end
 
 	private
 	def photo_params
-      params.require(:photo).permit(:image, :member_id )
+    params.require(:photo).permit(:image, :member_id )
 
-  	end
+  end
 
 end
