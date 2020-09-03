@@ -90,9 +90,17 @@
 			<table class="post-comment">
 				<% @post_comments.each do |post_comment| %>
 					<tr>
-						<td class="image-comment"><%= attachment_image_tag post_comment.member , :profile_image, size: "40x40", fallback: "no_image.jpg" %></td>
-						<td class="post-comment2"><%= post_comment.comment %></td>
-						<td><%= link_to "削除",  blog_post_comment_path(@blog,post_comment),class:'btn btn-danger btn btn--red btn--radius btn--cubic',method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+						<td class="image-comment">
+							<%= attachment_image_tag post_comment.member , :profile_image, size: "40x40", fallback: "no_image.jpg" %>
+						</td>
+						<td class="post-comment2">
+							<%= post_comment.comment %>
+						</td>
+						<% if post_comment.member == current_member %>
+							<td>
+								<%= link_to "削除",  blog_post_comment_path(@blog,post_comment),class:'btn btn-danger btn btn--red btn--radius btn--cubic',method: :delete, "data-confirm" => "本当に削除しますか？" %>
+							</td>
+						<% end %>
 					</tr>
 				<% end %>
 			</table>
