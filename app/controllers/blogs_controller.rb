@@ -23,7 +23,7 @@ class BlogsController < ApplicationController
 		@blog = Blog.find(params[:id])
     @post_comment = PostComment.new
     @member = @blog.member
-    @post_comments = @blog.post_commen
+    @post_comments = @blog.post_comments
 	end
 
 	def edit
