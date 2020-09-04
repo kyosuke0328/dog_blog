@@ -76,9 +76,11 @@
     <div class="container">
       <div class="row">
         <% if notice %>
-          2
+          <p id="validate"><%= notice %></p>
         <% end %>
-        <p class="alert alert-danger" ><%= alert %></p>
+        <% if alert %>
+          <p class="alert alert-danger" id="validate"><%= alert %></p>
+        <% end %>
       </div>
       <%= yield %>
     </div>
