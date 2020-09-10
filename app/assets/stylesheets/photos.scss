@@ -1,3 +1,96 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*     ~~~~~~~~~~ photoページのスタイル  ~~~~~~~~ */
+
+
+
+#photo-show {
+	margin-top: 40px;
+}
+
+.photo0{
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.photo-text {
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+
+#photo-text {
+	margin-top: 40px;
+	display: inline-block;
+}
+
+.photo-text2 {
+	margin-top: 70px;
+	margin-bottom: 50px;
+	display: inline-block;
+}
+
+
+.photo-box {
+	margin-right: auto;
+  	margin-left: auto;
+}
+
+.photo-box2 {
+	margin-bottom: 30px;
+}
+
+.photo-image {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-right: 20px;
+}
+
+.photo-dlete {
+	margin-right: 105px;
+	margin-top: 30px;
+}
+
+.photos-box {
+    float: left;
+    display: inline-block;
+    padding-right: 42px;
+    padding-bottom: 20px;
+}
+
+.kaminari {
+	justify-content: center;
+	margin-left: 400px;
+}
+
+#paginate {
+	justify-content: center;
+
+}
+
+.photo-table {
+	margin-top: 5px;
+}
+
+
+/*  ボタン */
+
+.dlt {
+	margin-left: 345px;
+}
+
+.btn--red.btn--cubic {
+    border-bottom: 5px solid #9f000c;
+    color: white;
+}
+
+.btn--red.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #9f000c;
+}
+
+

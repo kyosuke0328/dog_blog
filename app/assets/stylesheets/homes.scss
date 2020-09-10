@@ -1,3 +1,295 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*    ~~~~~~ aboutページのスタイル      ~~~~~~*/
+
+
+
+
+
+.about {
+	margin-reft: auto;
+	margin-right: auto;
+	margin-top: 90px;
+	height: 990px;
+}
+
+.about-box2 {
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #808080;
+}
+
+.about-box3 {
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #808080;
+}
+
+.about-box4 {
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #808080;
+}
+
+.mini {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+	padding-top: 30px;
+}
+
+.about-text {
+	padding-top: 30px;
+}
+
+.about-tx {
+	padding: 30px 0px;
+}
+
+.mini2 {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+}
+
+.mini3 {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+}
+
+.about-img {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+}
+
+.about-img2 {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+}
+
+.about-img3 {
+	float: left;
+	width: 50%;
+	height: 300px;
+	margin-reft: auto;
+	margin-right: auto;
+}
+
+
+
+
+
+
+
+
+/*   ~~~~~~~~~~~~ topページのスタイル  ~~~~~    */
+
+
+
+
+
+.top {
+	margin-top: 80px;
+	margin-bottom: 50px;
+}
+
+
+.top-img2 {
+	font-size: 60px;
+	padding-top: 370px;
+	color: white;
+	text-shadow:0 5px 5px black;
+}
+
+.top-table {
+	margin-left: 160px;
+	width: 900px;
+}
+
+.theTarget {
+	height: 500px;
+}
+
+#top-member {
+	width: 60px;
+	height: 60px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-right: 50px;
+}
+
+#top-b {
+	border-bottom:solid 2px silver;
+}
+
+
+#m-title {
+	padding-left: 70px;
+	padding-right: 90px;
+}
+
+
+#top-h {
+	padding-bottom: 30px;
+}
+
+.image-dog {
+	width: 585px;
+	height: 280px;
+}
+
+.ti {
+	background-size: cover;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+.btn,
+.btn,
+button.btn {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	padding: 1rem 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
+}
+
+
+.btn--blue.btn--border-outset {
+    border: 2px outset #F4A460;
+    float: center;
+    margin-bottom: 20px;
+    background-color: #FFE4B5;
+}
+
+.btn--black {
+    color: #fff;
+    background-color: #FFE4B5;
+}
+
+.btn--black:hover {
+    color: #fff;
+    background: #F4A460;
+}
+
+.btn--shadow {
+	 -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+ 	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.btn--circle {
+	border-radius: 50%;
+	line-height: 50px;
+	width: 50px;
+	height: 50px;
+	padding: 0;
+}
+
+.login {
+	width: 440px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+.login2 {
+	position: relative;
+	z-index: 1;
+	background: #FFFAF0;
+	max-width: 650px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.new2 {
+	padding-top: 30px;
+}
+
+
+.btn--radius {
+    border-radius: 100vh;
+}
+
+.fa-position-right {
+	position: absolute;
+	top: calc(50% - .5em);
+	right: 1rem;
+}
+
+
+.btn--primary.btn--cubic {
+    border-bottom: 5px solid #0033CC;
+    color: white;
+}
+
+.btn--primary.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid #0033CC;
+}
+
+.btn--silver.btn--cubic {
+    border-bottom: 5px solid silver;
+}
+
+.btn--silver.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid silver;
+}
+
+#search {
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background: white;
+}
+
+#border {
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+
+.devise {
+	color: #F4A460;
+}

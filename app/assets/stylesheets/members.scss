@@ -1,3 +1,62 @@
 // Place all the styles related to the members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*   ~~~~~~~~~~~~    memberページのスタイル  ~~~~~~~~　*/
+
+
+#member_img_prev{
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+
+
+#myshow {
+	margin-top: 70px;
+}
+
+.myshow {
+	margin-bottom: 60px;
+}
+
+.image-member-show{
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#member_b {
+	width: 660px;
+	margin-top: 100px;
+	margin-left: 195px;
+}
+
+.m-text {
+	margin-top: 150px;
+}
+
+
+
+/* ~~~~~  ボタン   ~~~ */
+
+.btn--success.btn--cubic {
+    border-bottom: 5px solid green;
+    color: white;
+}
+
+
+.btn--success.btn--cubic:hover {
+    margin-top: 3px;
+    border-bottom: 2px solid green;
+}
+
+
+
