@@ -1,6 +1,6 @@
 $(function(){
   // オプションを指定してSkipprの実行
-  $(".theTarget").skippr({
+  $("#theTarget").skippr({
     // スライドショーの変化（"fade" or "slide"）
     transition : 'fade',
     // 変化にかかる時間（ミリ秒）
